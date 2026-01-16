@@ -70,8 +70,17 @@ namespace Allatkert
             }
             double atlagEletkor = (double)osszEletkor / allatkert.Count;
             Console.WriteLine($"Az allatok atlageletkora: {atlagEletkor} ev");
+            //Feladat 4: Listázd ki azokat az állatokat, amelyek 2015 után születtek.
+            Console.WriteLine("2015 után született állatok:");
+            foreach (var allat in allatkert)
+            {
+                if (allat.SzuletesiEv > 2015)
+                {
+                    Console.WriteLine(allat.Nev);
+                }
 
 
-        }
+            }
+        }   
     }
 }
