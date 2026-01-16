@@ -52,6 +52,16 @@ namespace Allatkert
                 }
             }
             Console.WriteLine($"{db}db állat lakik szavannán");
+            //Feladat 2: Találd meg a legkorábban született állatot, (nem idén).
+            Allat legkorabbi = allatkert[0];
+            foreach (var allat in allatkert)
+            {
+                if (allat.SzuletesiEv < legkorabbi.SzuletesiEv)
+                {
+                    legkorabbi = allat;
+                }
+            }
+            Console.WriteLine($"A legkorábban született állat: {legkorabbi.Nev}");
 
         }
     }
