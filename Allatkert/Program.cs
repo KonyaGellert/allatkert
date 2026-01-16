@@ -42,6 +42,16 @@ namespace Allatkert
             allatkert.Add(new Allat("Bpapi", "Papagáj", 2012, "dzsungel"));
             allatkert.Add(new Allat("Attila", "Pingvin", 2016, "sarkvidék"));
 
+            //Feladat 1: Határozd meg, hány állat tartozik a „szavanna” élőhelyhez.
+            int db = 0;
+            foreach (var allat in allatkert)
+            {
+                if (allat.Elohely == "szavanna")
+                {
+                    db++;
+                }
+            }
+            Console.WriteLine($"{db}db állat lakik szavannán");
 
         }
     }
