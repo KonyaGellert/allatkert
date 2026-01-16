@@ -62,6 +62,15 @@ namespace Allatkert
                 }
             }
             Console.WriteLine($"A legkorábban született állat: {legkorabbi.Nev}");
+            //Feladat 3: Számold ki az állatok átlagéletkorát a jelenlegi év alapján, használd a hanyeves függvényt.
+            int osszEletkor = 0;
+            foreach (var allat in allatkert)
+            {
+                osszEletkor += allat.hanyeves();
+            }
+            double atlagEletkor = (double)osszEletkor / allatkert.Count;
+            Console.WriteLine($"Az allatok atlageletkora: {atlagEletkor} ev");
+
 
         }
     }
