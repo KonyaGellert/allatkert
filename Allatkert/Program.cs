@@ -23,7 +23,7 @@ namespace Allatkert
 
         public override string ToString()
         {
-            return "Az állat neve:"+ Nev + ",Faja:"+ Faj + ",Szuletesiéve:"+ SzuletesiEv + ",Élőhelye" +Elohely ;
+            return "Az állat neve:"+ Nev + ", Faja:"+ Faj + ", Szuletesiéve:"+ SzuletesiEv + ", Élőhelye" +Elohely ;
         }
         public int hanyeves()
         {
@@ -81,6 +81,40 @@ namespace Allatkert
 
 
             }
-        }   
+            //Feladat 5: Olvasd be konzolról egy új állat adatait. Ha még nincs ilyen nevű add hozzá, Ha van ilyen töröld a listából!
+            Console.WriteLine("Add meg az állat nevét: ");
+            string nev = Console.ReadLine();
+
+            Console.WriteLine("Add meg az állat faját: ");
+            string faj = Console.ReadLine();
+
+            Console.WriteLine("Add meg az állat születési évét: ");
+            int szuletesiEv = int.Parse(Console.ReadLine());
+
+            Console.WriteLine("Add meg az állat élőhelyét: ");
+            string elohely = Console.ReadLine();
+
+            Allat ujallat = new Allat(nev, faj, szuletesiEv, elohely);
+            bool letezik = false;
+            foreach (var allat in allatkert)
+            {
+                if (allat.Nev == ujallat.Nev)
+                {
+                    letezik = true;
+                    allatkert.Remove(allat);
+                    Console.WriteLine("Már van ilyen állat");
+                    break;
+                }
+            }
+            if (!letezik)
+            {
+                allatkert.Add(ujallat);
+                Console.WriteLine("Az állat hozzá lett adva a listához.");
+            }
+
+
+
+
+        }
     }
 }
